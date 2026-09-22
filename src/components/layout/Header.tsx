@@ -31,20 +31,6 @@ export default function Header({ onMenuClick, isMobileMenuOpen }: { onMenuClick?
             </button>
           )}
 
-          {/* Mobile Header Branding */}
-          <div className="flex md:hidden items-center gap-2 min-w-0">
-            <div className="w-8 h-8 rounded-xl overflow-hidden shrink-0 shadow-xs">
-              <img 
-                src={businessProfile?.logo || '/logo.png'} 
-                alt={businessProfile?.name || 'VORIX'} 
-                className="w-full h-full object-contain rounded-xl" 
-              />
-            </div>
-            <span className="font-extrabold text-xs sm:text-sm text-slate-900 truncate">
-              {businessProfile?.name || 'VORIX'}
-            </span>
-          </div>
-
           {/* Desktop PWA Install Button */}
           <div className="hidden lg:block shrink-0">
             <PWAInstallButton />
