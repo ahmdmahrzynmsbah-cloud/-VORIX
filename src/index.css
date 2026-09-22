@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Vazirmatn:wght@100..900&display=swap');
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "IBM Plex Sans Arabic", "Vazirmatn", ui-sans-serif, system-ui, sans-serif;
+
+  --color-bg-base: #F8FAFC;
+  --color-bg-surface: #FFFFFF;
+  --color-bg-surface-2: #F1F5F9;
+  --color-bg-sidebar: #1A0D14;
+  --color-bg-sidebar-hover: #2B1521;
+
+  --color-primary-base: #800020;
+  --color-primary-light: #F3E6D5;
+  --color-primary-dark: #660019;
+
+  --color-accent-base: #800020;
+  --color-accent-light: #F3E6D5;
+
+  --color-success-base: #10B981;
+  --color-success-bg: #ECFDF5;
+  
+  --color-warning-base: #D97706;
+  --color-warning-bg: #FFFBEB;
+  
+  --color-danger-base: #EF4444;
+  --color-danger-bg: #FEF2F2;
+  
+  --color-info-base: #0284C7;
+  --color-info-bg: #F0F9FF;
+
+  --color-text-primary: #0F172A;
+  --color-text-secondary: #475569;
+  --color-text-muted: #94A3B8;
+  --color-text-on-dark: #F3E6D5;
+
+  --color-border-base: #E2E8F0;
+  --color-border-focus: #800020;
+}
+
+@layer base {
+  html, body {
+    background-color: var(--color-bg-base);
+    color: var(--color-text-primary);
+    font-family: var(--font-sans);
+    transition: background-color 0.2s ease, color 0.2s ease;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    -webkit-overflow-scrolling: touch; /* Smooth iOS scrolling */
+  }
+
+  /* Completely hide scrollbars for Chrome, Safari, Opera and all elements */
+  * {
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+
+  *::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    background: transparent !important;
+  }
+}
+
+/* Utility for hiding scrollbar explicitly */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* User Text Selection */
+::selection {
+  background-color: #800020;
+  color: #F3E6D5;
+}
+
+/* Ensure invoice card paper preview remains clean white */
+#invoice-card {
+  background-color: #ffffff !important;
+  color: #1E293B !important;
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  html, body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Completely remove non-printable elements from document print layout */
+  .print\:hidden,
+  nav,
+  header,
+  aside,
+  button,
+  footer,
+  .no-print,
+  #html2canvas-staging-wrapper {
+    display: none !important;
+  }
+
+  .print\:backdrop-blur-none {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  /* Ensure printable wrappers render cleanly at 100% width and auto height */
+  #invoice-print-area,
+  #hidden-share-invoice-print,
+  #purchase-invoice-printable-area,
+  #statement-printable-area,
+  #supplier-statement-printable-area,
+  .printable-area {
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 10px !important;
+    box-shadow: none !important;
+    border: none !important;
+    background-color: #ffffff !important;
+    display: block !important;
+    overflow: visible !important;
+    float: none !important;
+    box-sizing: border-box !important;
+  }
+
+  #invoice-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: auto !important;
+    height: auto !important;
+    margin: 0 auto !important;
+    padding: 8mm 10mm !important;
+    box-shadow: none !important;
+    border: none !important;
+    box-sizing: border-box !important;
+    page-break-after: avoid !important;
+    break-after: avoid !important;
+  }
+}

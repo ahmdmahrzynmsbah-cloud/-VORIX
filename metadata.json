@@ -1,0 +1,8 @@
+{
+  "name": "VORIX",
+  "description": "نظام VORIX المتكامل لإدارة قطع الغيار والمخزون والفواتير والمبيعات",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
