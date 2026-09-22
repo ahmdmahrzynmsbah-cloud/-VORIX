@@ -1,5 +1,5 @@
 {
-  "name": "doctor-tools",
+  "name": "vorix",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -59,8 +59,8 @@
   },
   "main": "electron/main.cjs",
   "build": {
-    "appId": "com.foxtech.doctortools",
-    "productName": "DoctorTools",
+    "appId": "com.vorix.app",
+    "productName": "VORIX",
     "directories": {
       "output": "release"
     },
@@ -71,7 +71,7 @@
       ]
     },
     "portable": {
-      "artifactName": "DoctorTools.exe"
+      "artifactName": "VORIX.exe"
     },
     "npmRebuild": false,
     "files": [

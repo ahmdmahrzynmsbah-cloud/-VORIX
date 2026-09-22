@@ -8,6 +8,8 @@ function createWindow() {
     width: 1280,
     height: 800,
     show: false,
+    title: 'VORIX',
+    icon: path.join(__dirname, '../public/logo.png'),
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false
